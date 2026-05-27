@@ -1,0 +1,6 @@
+[submodule "api-technology"]
+	path = api-technology
+	url = ./api-technology
+[submodule "api-capability"]
+	path = api-capability
+	url = ./api-capability
