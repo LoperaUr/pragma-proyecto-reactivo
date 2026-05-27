@@ -1,6 +1,6 @@
 [submodule "api-technology"]
 	path = api-technology
-	url = ./api-technology
+	url = https://github.com/LoperaUr/api-technology
 [submodule "api-capability"]
 	path = api-capability
-	url = ./api-capability
+	url = https://github.com/LoperaUr/api-capability
