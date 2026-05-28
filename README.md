@@ -26,6 +26,142 @@ pragma-proyecto-reactivo/
 
 ---
 
+## Historias de Usuario
+
+### HU-1: Registrar tecnologías
+
+| Campo | Detalle |
+|-------|---------|
+| **Rol** | Admin |
+| **Necesidad** | Registrar las tecnologías que serán usadas próximamente por las capacidades |
+| **Beneficio** | Saber a qué tecnologías le está apuntando el bootcamp y agrupar de mejor manera |
+
+**Criterios de aceptación:**
+- Cada tecnología tiene 3 campos: id, nombre y descripción
+- El nombre de la tecnología no se puede repetir
+- Todas las tecnologías deben tener una descripción
+- El tamaño máximo del nombre debe ser de 50 caracteres
+- El tamaño máximo de la descripción debe ser de 90 caracteres
+
+---
+
+### HU-2: Registrar capacidades
+
+| Campo | Detalle |
+|-------|---------|
+| **Rol** | Admin |
+| **Necesidad** | Registrar las capacidades |
+| **Beneficio** | Agrupar tecnologías |
+
+**Criterios de aceptación:**
+- Cada capacidad tiene 3 campos: id, nombre y descripción
+- Las capacidades deben tener mínimo 3 tecnologías asociadas
+- Las capacidades no pueden tener tecnologías repetidas
+- Una capacidad tiene máximo 20 tecnologías
+
+---
+
+### HU-3: Listar capacidades
+
+| Campo | Detalle |
+|-------|---------|
+| **Rol** | Admin |
+| **Necesidad** | Listar las capacidades |
+| **Beneficio** | Visualizar cuáles ya están creadas |
+
+**Criterios de aceptación:**
+- Se debe poder parametrizar si se quiere listar en orden descendente o ascendente por el nombre o por la cantidad de tecnologías asociadas
+- El servicio debe estar paginado
+- De cada capacidad listada, se debe traer el listado de tecnologías solo con nombre e id
+
+---
+
+### HU-4: Registrar bootcamp
+
+| Campo | Detalle |
+|-------|---------|
+| **Rol** | Admin |
+| **Necesidad** | Registrar bootcamps |
+| **Beneficio** | Dar inicio a eventos del bootcamp |
+
+**Criterios de aceptación:**
+- Cada bootcamp debe tener: id, nombre, descripción, fecha de lanzamiento, duración y un listado de capacidades asociadas
+- Un bootcamp debe tener como mínimo 1 capacidad asociada y como máximo 4
+
+---
+
+### HU-5: Listar bootcamps
+
+| Campo | Detalle |
+|-------|---------|
+| **Rol** | Admin |
+| **Necesidad** | Listar los bootcamps |
+| **Beneficio** | Visualizar cuáles ya están creados |
+
+**Criterios de aceptación:**
+- Se debe poder parametrizar si se quiere listar en orden descendente o ascendente por el nombre o por la cantidad de capacidades asociadas
+- El servicio debe estar paginado
+- De cada bootcamp listado, se debe traer el listado de capacidades con nombre e id, y listado de tecnologías con nombre e id
+
+---
+
+### HU-6: Eliminar bootcamp
+
+| Campo | Detalle |
+|-------|---------|
+| **Rol** | Admin |
+| **Necesidad** | Eliminar los bootcamps |
+| **Beneficio** | Que ya no estén disponibles para las personas |
+
+**Criterios de aceptación:**
+- Se debe eliminar tanto el bootcamp como las capacidades y tecnologías asociadas
+- Las capacidades y tecnologías asociadas solo se eliminan si están referenciadas únicamente por ese bootcamp; si están referenciadas por más bootcamps, no se deben eliminar
+- La operación debe ser transaccional
+
+---
+
+### HU-7: Inscribirme en bootcamps
+
+| Campo | Detalle |
+|-------|---------|
+| **Rol** | Persona |
+| **Necesidad** | Inscribirme en varios bootcamps |
+| **Beneficio** | Poder participar en las actividades de los bootcamps |
+
+**Criterios de aceptación:**
+- Una persona se puede inscribir en varios bootcamps a la vez, siempre y cuando no coincidan en fecha y duración
+- Máximo se puede inscribir en 5 bootcamps al tiempo
+
+---
+
+### HU-8: Registrar reporte de bootcamp
+
+| Campo | Detalle |
+|-------|---------|
+| **Rol** | Admin |
+| **Necesidad** | Registrar los reportes de los bootcamps |
+| **Beneficio** | Sacar métricas sobre el comportamiento de los usuarios |
+
+**Criterios de aceptación:**
+- Cada vez que se registre un bootcamp se debe guardar en la base de datos de reporte toda la información necesaria para sacar métricas
+- Se debe guardar: toda la información del bootcamp, cantidad de capacidades, cantidad de tecnologías, cantidad de personas inscritas
+- El guardado debe hacerse sin afectar el rendimiento del registro de bootcamp
+
+---
+
+### HU-9: Mostrar el bootcamp con mayor cantidad de personas
+
+| Campo | Detalle |
+|-------|---------|
+| **Rol** | Admin |
+| **Necesidad** | Listar el bootcamp con la mayor cantidad de personas |
+| **Beneficio** | Saber cuál es el bootcamp más exitoso |
+
+**Criterios de aceptación:**
+- El sistema debe retornar: toda la información del bootcamp, el nombre y correo de cada persona inscrita, cada una de las capacidades y cada una de las tecnologías asociadas al bootcamp
+
+---
+
 ## Guía de Operadores de WebFlux (Project Reactor)
 
 ### Conceptos base
