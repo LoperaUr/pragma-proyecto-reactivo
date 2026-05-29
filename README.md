@@ -43,6 +43,8 @@ pragma-proyecto-reactivo/
 - El tamaño máximo del nombre debe ser de 50 caracteres
 - El tamaño máximo de la descripción debe ser de 90 caracteres
 
+**Microservicio:** `api-technology`
+
 ---
 
 ### HU-2: Registrar capacidades
@@ -59,6 +61,8 @@ pragma-proyecto-reactivo/
 - Las capacidades no pueden tener tecnologías repetidas
 - Una capacidad tiene máximo 20 tecnologías
 
+**Microservicio:** `api-capability` (consume `api-technology`)
+
 ---
 
 ### HU-3: Listar capacidades
@@ -74,6 +78,8 @@ pragma-proyecto-reactivo/
 - El servicio debe estar paginado
 - De cada capacidad listada, se debe traer el listado de tecnologías solo con nombre e id
 
+**Microservicio:** `api-capability` (consume `api-technology`)
+
 ---
 
 ### HU-4: Registrar bootcamp
@@ -87,6 +93,8 @@ pragma-proyecto-reactivo/
 **Criterios de aceptación:**
 - Cada bootcamp debe tener: id, nombre, descripción, fecha de lanzamiento, duración y un listado de capacidades asociadas
 - Un bootcamp debe tener como mínimo 1 capacidad asociada y como máximo 4
+
+**Microservicio:** `api-bootcamp` (consume `api-capability`)
 
 ---
 
@@ -103,6 +111,8 @@ pragma-proyecto-reactivo/
 - El servicio debe estar paginado
 - De cada bootcamp listado, se debe traer el listado de capacidades con nombre e id, y listado de tecnologías con nombre e id
 
+**Microservicio:** `api-bootcamp` (consume `api-capability` y `api-technology`)
+
 ---
 
 ### HU-6: Eliminar bootcamp
@@ -118,6 +128,8 @@ pragma-proyecto-reactivo/
 - Las capacidades y tecnologías asociadas solo se eliminan si están referenciadas únicamente por ese bootcamp; si están referenciadas por más bootcamps, no se deben eliminar
 - La operación debe ser transaccional
 
+**Microservicio:** `api-bootcamp` (consume `api-capability` y `api-technology`)
+
 ---
 
 ### HU-7: Inscribirme en bootcamps
@@ -131,6 +143,8 @@ pragma-proyecto-reactivo/
 **Criterios de aceptación:**
 - Una persona se puede inscribir en varios bootcamps a la vez, siempre y cuando no coincidan en fecha y duración
 - Máximo se puede inscribir en 5 bootcamps al tiempo
+
+**Microservicio:** `api-persona` (consume `api-bootcamp`)
 
 ---
 
@@ -147,6 +161,8 @@ pragma-proyecto-reactivo/
 - Se debe guardar: toda la información del bootcamp, cantidad de capacidades, cantidad de tecnologías, cantidad de personas inscritas
 - El guardado debe hacerse sin afectar el rendimiento del registro de bootcamp
 
+**Microservicio:** `api-reporte` (evento desde `api-bootcamp`)
+
 ---
 
 ### HU-9: Mostrar el bootcamp con mayor cantidad de personas
@@ -159,6 +175,24 @@ pragma-proyecto-reactivo/
 
 **Criterios de aceptación:**
 - El sistema debe retornar: toda la información del bootcamp, el nombre y correo de cada persona inscrita, cada una de las capacidades y cada una de las tecnologías asociadas al bootcamp
+
+**Microservicio:** `api-reporte` (consume `api-bootcamp` y `api-persona`)
+
+---
+
+## Asignación de HUs por Microservicio
+
+| HU | Funcionalidad | Microservicio |
+|----|---------------|---------------|
+| HU-1 | Registrar tecnologías | `api-technology` |
+| HU-2 | Registrar capacidades | `api-capability` (consume `api-technology`) |
+| HU-3 | Listar capacidades | `api-capability` (consume `api-technology`) |
+| HU-4 | Registrar bootcamp | `api-bootcamp` (consume `api-capability`) |
+| HU-5 | Listar bootcamps | `api-bootcamp` (consume `api-capability` y `api-technology`) |
+| HU-6 | Eliminar bootcamp | `api-bootcamp` (consume `api-capability` y `api-technology`) |
+| HU-7 | Inscribirme en bootcamps | `api-persona` (consume `api-bootcamp`) |
+| HU-8 | Registrar reporte de bootcamp | `api-reporte` (evento desde `api-bootcamp`) |
+| HU-9 | Mostrar bootcamp con mayor personas | `api-reporte` (consume `api-bootcamp` y `api-persona`) |
 
 ---
 
