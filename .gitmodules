@@ -4,3 +4,6 @@
 [submodule "api-capability"]
 	path = api-capability
 	url = https://github.com/LoperaUr/api-capability
+[submodule "api-bootcamp"]
+	path = api-bootcamp
+	url = https://github.com/LoperaUr/api-bootcamp.git
