@@ -7,3 +7,6 @@
 [submodule "api-bootcamp"]
 	path = api-bootcamp
 	url = https://github.com/LoperaUr/api-bootcamp.git
+[submodule "api-person"]
+	path = api-person
+	url = https://github.com/LoperaUr/api-person.git
