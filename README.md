@@ -8,6 +8,8 @@ Proyecto que contiene los microservicios reactivos desarrollados con Spring WebF
 |----------|--------|-------------|
 | [api-technology](./api-technology) | 8080 | Gestión de tecnologías |
 | [api-capability](./api-capability) | 8081 | Gestión de capacidades |
+| [api-bootcamp](./api-bootcamp) | 8082 | Gestión de bootcamps |
+| [api-persona](./api-persona) | 8083 | Gestión de personas
 
 ## Clonar el proyecto
 
