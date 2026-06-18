@@ -555,12 +555,3 @@ public Mono<Capability> save(Capability capability) {
             );
 }
 ```
-
-**Lectura en español**:
-1. Valida los campos (nombre, descripción, cantidad de tecnologías)
-2. Verifica que todas las tecnologías existan en api-technology (1 sola petición HTTP)
-3. Verifica que no exista otra capability con el mismo nombre
-4. Si no existe → guarda la capability en la DB local
-5. Guarda la relación capability-tecnología en api-technology
-6. Si todo sale bien → retorna la capability guardada
-7. Si el paso 5 falla → borra la capability (rollback manual) y propaga el error
