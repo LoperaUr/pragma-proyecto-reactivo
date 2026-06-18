@@ -10,3 +10,6 @@
 [submodule "api-person"]
 	path = api-person
 	url = https://github.com/LoperaUr/api-person.git
+[submodule "api-report"]
+	path = api-report
+	url = https://github.com/LoperaUr/api-report.git

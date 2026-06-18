@@ -9,7 +9,8 @@ Proyecto que contiene los microservicios reactivos desarrollados con Spring WebF
 | [api-technology](./api-technology) | 8080 | Gestión de tecnologías |
 | [api-capability](./api-capability) | 8081 | Gestión de capacidades |
 | [api-bootcamp](./api-bootcamp) | 8082 | Gestión de bootcamps |
-| [api-persona](./api-persona) | 8083 | Gestión de personas
+| [api-person](./api-person) | 8083 | Gestión de personas |
+| [api-report](./api-report) | 8084 | Gestión de reportes |
 
 ## Clonar el proyecto
 
@@ -23,7 +24,10 @@ git clone --recurse-submodules <url-del-repo>
 pragma-proyecto-reactivo/
 ├── README.md
 ├── api-technology/   (submodule)
-└── api-capability/   (submodule)
+├── api-capability/   (submodule)
+├── api-bootcamp/     (submodule)
+├── api-person/       (submodule)
+└── api-report/       (submodule)
 ```
 
 ---
